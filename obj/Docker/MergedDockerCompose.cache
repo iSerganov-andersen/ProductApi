@@ -1,0 +1,35 @@
+networks:
+  default:
+    external:
+      name: nat
+services:
+  productweb:
+    build:
+      context: C:\Development\ProductApi
+      dockerfile: ProductWeb/Dockerfile
+    depends_on:
+    - sqlserverService
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    expose:
+    - '80'
+    image: productweb
+    links:
+    - sqlserverService
+    ports:
+    - published: 80
+      target: 80
+  sqlserverService:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Sup3rP@55
+    expose:
+    - '1433'
+    hostname: sqlserver
+    image: mcr.microsoft.com/mssql/server
+    ports:
+    - published: 1433
+      target: 1433
+    volumes:
+    - /c/Development/ProductApi/data/mssql://var/opt/mssql3:rw
+version: '3.4'

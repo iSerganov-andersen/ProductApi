@@ -1,0 +1,11 @@
+C:\Development\ProductApi\bin\Debug\ProductWeb.dll
+C:\Development\ProductApi\bin\Debug\ProductServices.dll
+C:\Development\ProductApi\bin\Debug\ProductCore.dll
+C:\Development\ProductApi\bin\Debug\ProductDataAccess.dll
+C:\Development\ProductApi\bin\Debug\ProductWeb.pdb
+C:\Development\ProductApi\bin\Debug\ProductServices.pdb
+C:\Development\ProductApi\bin\Debug\ProductCore.pdb
+C:\Development\ProductApi\bin\Debug\ProductDataAccess.pdb
+C:\Development\ProductApi\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+C:\Development\ProductApi\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Development\ProductApi\obj\Debug\docker-compose.dcproj.CopyComplete

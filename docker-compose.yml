@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  productweb:
+    links:  
+      - sqlserverService  
+    image: ${DOCKER_REGISTRY-}productweb  
+    build:  
+      context: .  
+      dockerfile: ProductWeb/Dockerfile 
+    depends_on:
+      - sqlserverService
+    ports:  
+      - '80:80'  
+    expose:  
+      - 80  
+  
+  sqlserverService:  
+    image: mcr.microsoft.com/mssql/server  
+    hostname: 'sqlserver'  
+    environment:  
+      ACCEPT_EULA: Y  
+      SA_PASSWORD: "Sup3rP@55"  
+    volumes:  
+      - ./data/mssql://var/opt/mssql3  
+    ports:  
+      - '1433:1433'  
+    expose:  
+      - 1433  

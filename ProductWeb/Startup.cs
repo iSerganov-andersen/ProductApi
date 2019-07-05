@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,8 +34,17 @@ namespace ProductWeb
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AwesomeDbContext>(options => options.UseSqlServer(connectionString));
             services.AddScoped<ProductService, ProductService>();
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new CorsAuthorizationFilterFactory("TotalAllow"));
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddCors(options =>
+            {
+                options.AddPolicy("TotalAllow",
+                builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Simply perfect API", Version = "v1" });
@@ -58,6 +68,7 @@ namespace ProductWeb
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Simply perfect API V1");
                 c.RoutePrefix = string.Empty;
             });
+            app.UseCors("TotalAllow");
             app.UseMvc();
         }
     }

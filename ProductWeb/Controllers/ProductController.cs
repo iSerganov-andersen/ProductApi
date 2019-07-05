@@ -9,7 +9,7 @@ using ProductWeb.Models;
 
 namespace ProductWeb.Controllers
 {
-    [Route("api/product")]
+    [Route("product")]
     [ApiController]
     [Produces("application/json")]
     public class ProductController : Controller
@@ -22,11 +22,13 @@ namespace ProductWeb.Controllers
         }
         
         [HttpGet]
-        public JsonResult Get()
+        [Route("Get")]
+        public ActionResult<IList<Product>> Get()
         {
             try
             {
-                return Json(new ReturnRes<IList<Product>>(200, _service.Get().ToList()));
+                var results = _service.Get(p => p.Category).ToList();
+                return Json(results);
             }
             catch (Exception ex)
             {
@@ -35,7 +37,7 @@ namespace ProductWeb.Controllers
         }
 
         
-        [HttpGet("{id}")]
+        [HttpGet("Get/{id}")]
         public ActionResult<Product> Get(Guid id)
         {
             try
@@ -50,12 +52,13 @@ namespace ProductWeb.Controllers
 
         
         [HttpPost]
-        public ActionResult Add([FromBody] Product value)
+        [Route("Add")]
+        public async Task<ActionResult<Product>> Add([FromBody] Product value)
         {
             try
             {
-                _service.Add(value);
-                return Created(string.Empty, null);
+                await _service.AddAsync(value);
+                return Created(string.Empty, value);
             }
             catch (Exception ex)
             {
@@ -64,13 +67,13 @@ namespace ProductWeb.Controllers
         }
 
         
-        [HttpPut("{id}")]
-        public ActionResult Put(Guid id, [FromBody] Product value)
+        [HttpPut("Put/{id}")]
+        public async Task<ActionResult<Product>> Put(Guid id, [FromBody] Product value)
         {
             try
             {
-                _service.Update(id, value);
-                return NoContent();
+                await _service.UpdateAsync(id, value);
+                return Ok(value);
             }
             catch (Exception ex)
             {
@@ -79,13 +82,13 @@ namespace ProductWeb.Controllers
         }
 
        
-        [HttpDelete("{id}")]
-        public ActionResult Delete(Guid id)
+        [HttpDelete("Delete/{id}")]
+        public async Task<ActionResult> Delete(Guid id)
         {
             try
             {
-                _service.Delete(id);
-                return Ok();
+                await _service.DeleteAsync(id);
+                return Ok($"Product with'{id}' successfully deleted");
             }
             catch (Exception ex)
             {

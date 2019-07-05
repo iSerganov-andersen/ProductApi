@@ -6,3 +6,12 @@ C:\Development\ProductApi\ProductCore\obj\Debug\netstandard2.0\ProductCore.Assem
 C:\Development\ProductApi\ProductCore\bin\Debug\netstandard2.0\ProductCore.pdb
 C:\Development\ProductApi\ProductCore\obj\Debug\netstandard2.0\ProductCore.dll
 C:\Development\ProductApi\ProductCore\obj\Debug\netstandard2.0\ProductCore.pdb
+C:\Development\PAPI\ProductApi\ProductCore\bin\Debug\netstandard2.0\ProductCore.deps.json
+C:\Development\PAPI\ProductApi\ProductCore\bin\Debug\netstandard2.0\ProductCore.dll
+C:\Development\PAPI\ProductApi\ProductCore\bin\Debug\netstandard2.0\ProductCore.pdb
+C:\Development\PAPI\ProductApi\ProductCore\obj\Debug\netstandard2.0\ProductCore.csprojAssemblyReference.cache
+C:\Development\PAPI\ProductApi\ProductCore\obj\Debug\netstandard2.0\ProductCore.csproj.CoreCompileInputs.cache
+C:\Development\PAPI\ProductApi\ProductCore\obj\Debug\netstandard2.0\ProductCore.AssemblyInfoInputs.cache
+C:\Development\PAPI\ProductApi\ProductCore\obj\Debug\netstandard2.0\ProductCore.AssemblyInfo.cs
+C:\Development\PAPI\ProductApi\ProductCore\obj\Debug\netstandard2.0\ProductCore.dll
+C:\Development\PAPI\ProductApi\ProductCore\obj\Debug\netstandard2.0\ProductCore.pdb

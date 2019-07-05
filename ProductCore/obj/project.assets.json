@@ -3113,11 +3113,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Development\\ProductApi\\ProductCore\\ProductCore.csproj",
+      "projectUniqueName": "C:\\Development\\PAPI\\ProductApi\\ProductCore\\ProductCore.csproj",
       "projectName": "ProductCore",
-      "projectPath": "C:\\Development\\ProductApi\\ProductCore\\ProductCore.csproj",
+      "projectPath": "C:\\Development\\PAPI\\ProductApi\\ProductCore\\ProductCore.csproj",
       "packagesPath": "C:\\Users\\caesa\\.nuget\\packages\\",
-      "outputPath": "C:\\Development\\ProductApi\\ProductCore\\obj\\",
+      "outputPath": "C:\\Development\\PAPI\\ProductApi\\ProductCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

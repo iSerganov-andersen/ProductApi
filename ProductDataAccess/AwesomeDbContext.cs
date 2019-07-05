@@ -24,10 +24,12 @@ namespace ProductDataAccess
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
 
-            var categories = new List<Category>();
-            categories.Add(new Category("Food"));
-            categories.Add(new Category("Electronics"));
-            categories.Add(new Category("Cars"));
+
+            var categories = new[] {
+                new { Id = Guid.NewGuid(), Name = "Food" },
+                new { Id = Guid.NewGuid(), Name = "Electronics" },
+                new { Id = Guid.NewGuid(), Name = "Cars" }
+                };
             modelBuilder.Entity<Category>().HasData(categories[0], categories[1], categories[2]);
             modelBuilder.Entity<Product>().HasData(new { Id = Guid.NewGuid(), Name = "Milk GMZ", CategoryId = categories[0].Id, Price = 9.99m, IsActive = true },
                 new { Id = Guid.NewGuid(), Name = "TV Samsung 40\"", CategoryId = categories[1].Id, Price = 2999.99m, IsActive = true },

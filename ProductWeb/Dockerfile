@@ -9,18 +9,22 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:2.1 AS build
 WORKDIR /src
 COPY ["ProductWeb/ProductWeb.csproj", "ProductWeb/"]
+COPY ["ProductWeb/appsettings.json", "ProductWeb/"]
+
 RUN dotnet restore "ProductWeb/ProductWeb.csproj"
 COPY . .
 WORKDIR "/src/ProductWeb"
 RUN dotnet build "ProductWeb.csproj" -c Release -o /app
+
 
 FROM build AS publish
 RUN dotnet publish "ProductWeb.csproj" -c Release -o /app
 
 FROM base AS final  
 WORKDIR /app  
-COPY --from=publish /app .  
-ENTRYPOINT ["dotnet", "ProductWeb.dll"]  
+COPY --from=publish /app . 
+COPY ["entrypoint.sh", ""]
+COPY ["ef.dll", ""]
+RUN chmod +x ./entrypoint.sh
+CMD /bin/bash ./entrypoint.sh
 
-#RUN chmod +x ./app/entrypoint.sh
-#CMD /bin/bash ./app/entrypoint.sh

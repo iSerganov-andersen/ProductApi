@@ -10,3 +10,15 @@ C:\Development\ProductApi\ProductDataAccess\bin\Debug\netstandard2.0\ProductCore
 C:\Development\ProductApi\ProductDataAccess\obj\Debug\netstandard2.0\ProductDataAccess.csproj.CopyComplete
 C:\Development\ProductApi\ProductDataAccess\obj\Debug\netstandard2.0\ProductDataAccess.dll
 C:\Development\ProductApi\ProductDataAccess\obj\Debug\netstandard2.0\ProductDataAccess.pdb
+C:\Development\PAPI\ProductApi\ProductDataAccess\bin\Debug\netstandard2.0\ProductDataAccess.deps.json
+C:\Development\PAPI\ProductApi\ProductDataAccess\bin\Debug\netstandard2.0\ProductDataAccess.dll
+C:\Development\PAPI\ProductApi\ProductDataAccess\bin\Debug\netstandard2.0\ProductDataAccess.pdb
+C:\Development\PAPI\ProductApi\ProductDataAccess\bin\Debug\netstandard2.0\ProductCore.dll
+C:\Development\PAPI\ProductApi\ProductDataAccess\bin\Debug\netstandard2.0\ProductCore.pdb
+C:\Development\PAPI\ProductApi\ProductDataAccess\obj\Debug\netstandard2.0\ProductDataAccess.csprojAssemblyReference.cache
+C:\Development\PAPI\ProductApi\ProductDataAccess\obj\Debug\netstandard2.0\ProductDataAccess.csproj.CoreCompileInputs.cache
+C:\Development\PAPI\ProductApi\ProductDataAccess\obj\Debug\netstandard2.0\ProductDataAccess.AssemblyInfoInputs.cache
+C:\Development\PAPI\ProductApi\ProductDataAccess\obj\Debug\netstandard2.0\ProductDataAccess.AssemblyInfo.cs
+C:\Development\PAPI\ProductApi\ProductDataAccess\obj\Debug\netstandard2.0\ProductDataAccess.csproj.CopyComplete
+C:\Development\PAPI\ProductApi\ProductDataAccess\obj\Debug\netstandard2.0\ProductDataAccess.dll
+C:\Development\PAPI\ProductApi\ProductDataAccess\obj\Debug\netstandard2.0\ProductDataAccess.pdb

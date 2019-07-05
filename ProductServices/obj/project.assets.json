@@ -3154,11 +3154,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Development\\ProductApi\\ProductServices\\ProductServices.csproj",
+      "projectUniqueName": "C:\\Development\\PAPI\\ProductApi\\ProductServices\\ProductServices.csproj",
       "projectName": "ProductServices",
-      "projectPath": "C:\\Development\\ProductApi\\ProductServices\\ProductServices.csproj",
+      "projectPath": "C:\\Development\\PAPI\\ProductApi\\ProductServices\\ProductServices.csproj",
       "packagesPath": "C:\\Users\\caesa\\.nuget\\packages\\",
-      "outputPath": "C:\\Development\\ProductApi\\ProductServices\\obj\\",
+      "outputPath": "C:\\Development\\PAPI\\ProductApi\\ProductServices\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3178,11 +3178,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Development\\ProductApi\\ProductCore\\ProductCore.csproj": {
-              "projectPath": "C:\\Development\\ProductApi\\ProductCore\\ProductCore.csproj"
+            "C:\\Development\\PAPI\\ProductApi\\ProductCore\\ProductCore.csproj": {
+              "projectPath": "C:\\Development\\PAPI\\ProductApi\\ProductCore\\ProductCore.csproj"
             },
-            "C:\\Development\\ProductApi\\ProductDataAccess\\ProductDataAccess.csproj": {
-              "projectPath": "C:\\Development\\ProductApi\\ProductDataAccess\\ProductDataAccess.csproj"
+            "C:\\Development\\PAPI\\ProductApi\\ProductDataAccess\\ProductDataAccess.csproj": {
+              "projectPath": "C:\\Development\\PAPI\\ProductApi\\ProductDataAccess\\ProductDataAccess.csproj"
             }
           }
         }

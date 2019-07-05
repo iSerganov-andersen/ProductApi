@@ -4,8 +4,3 @@ services:
   productweb:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-
-networks:
-  default:
-    external:
-      name: nat

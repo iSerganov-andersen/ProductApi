@@ -60,6 +60,8 @@ namespace ProductWeb.Controllers
             try
             {
                 var product = new Product(value.Name, value.Category, value.Price);
+                if (!value.IsActive)
+                    product.Activate();
                 await _service.AddAsync(product);
                 return Created(string.Empty, product);
             }
@@ -75,6 +77,10 @@ namespace ProductWeb.Controllers
         {
             try
             {
+                if (value.IsActive)
+                    value.DeActivate();
+                else
+                    value.Activate();
                 await _service.UpdateAsync(id, value);
                 return Ok(value);
             }

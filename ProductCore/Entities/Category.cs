@@ -6,13 +6,13 @@ namespace ProductCore.Entities
     public class Category : BaseEntity
     {
         private Category() { }
-        public Category(String name)
+        public Category(String name, Guid? id = null)
         {
-            Id = Guid.NewGuid();
+            Id = id.HasValue ? id.Value : Guid.NewGuid();
             Name = name;
             Products = new List<Product>();
         }
-        public ICollection<Product> Products { get; private set; }
+        public virtual ICollection<Product> Products { get; private set; }
         public void Rename(String newName)
         {
             Name = newName;

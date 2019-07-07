@@ -19,7 +19,7 @@ namespace ProductServices.BusinessServices
         }
         public async Task AddAsync(T entity)
         {
-            _context.Set<T>().Add(entity);
+            _context.Entry<T>(entity).State = EntityState.Added;
             await _context.SaveChangesAsync();
         }
 

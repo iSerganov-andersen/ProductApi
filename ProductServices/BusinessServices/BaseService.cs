@@ -39,7 +39,7 @@ namespace ProductServices.BusinessServices
 
         public IQueryable<T> Get()
         {
-            return _context.Set<T>();
+            return _context.Set<T>().AsNoTracking();
         }
 
         public IQueryable<T> Get(params System.Linq.Expressions.Expression<Func<T, object>>[] includes)
@@ -59,16 +59,17 @@ namespace ProductServices.BusinessServices
             return Get(entity => entity.Id.Equals(Id));
         }
 
-        public async Task UpdateAsync(Guid id, T entity)
+        public async virtual Task<T> UpdateAsync(Guid id, T entity)
         {
-            var entityExists = Get(id).Any();
-            if (!entityExists)
-                await AddAsync(entity);
-            else
+            if (entity == null)
+                return null;
+            T exist = _context.Set<T>().AsNoTracking().FirstOrDefault(p => p.Id == id);
+            if (exist != null)
             {
-                _context.Set<T>().Update(entity);
+                _context.Entry<T>(entity).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
             }
+            return exist;
         }
     }
 }

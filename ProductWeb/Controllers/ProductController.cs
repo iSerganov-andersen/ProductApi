@@ -15,10 +15,12 @@ namespace ProductWeb.Controllers
     public class ProductController : Controller
     {
         private readonly ProductService _service;
+        private readonly CategoryService _categoryService;
 
-        public ProductController(ProductService service)
+        public ProductController(ProductService service, CategoryService catService)
         {
             this._service = service;
+            this._categoryService = catService;
         }
         
         [HttpGet]
@@ -42,7 +44,7 @@ namespace ProductWeb.Controllers
         {
             try
             {
-                return Ok(_service.Get(id));
+                return Ok(_service.Get(p => p.Id == id, p => p.Category));
             }
             catch (Exception ex)
             {
@@ -57,8 +59,9 @@ namespace ProductWeb.Controllers
         {
             try
             {
-                await _service.AddAsync(value);
-                return Created(string.Empty, value);
+                var product = new Product(value.Name, value.Category, value.Price);
+                await _service.AddAsync(product);
+                return Created(string.Empty, product);
             }
             catch (Exception ex)
             {
@@ -93,6 +96,20 @@ namespace ProductWeb.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpGet("available-categories")]
+        public ActionResult<IList<Category>> GetAllAvailableCategories()
+        {
+            try
+            {
+                var results = _categoryService.Get().ToList();
+                return Json(results);
+            }
+            catch (Exception ex)
+            {
+                return Json(new ReturnRes(500, ex.Message));
             }
         }
     }

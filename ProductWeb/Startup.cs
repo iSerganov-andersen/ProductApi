@@ -34,6 +34,7 @@ namespace ProductWeb
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AwesomeDbContext>(options => options.UseSqlServer(connectionString));
             services.AddScoped<ProductService, ProductService>();
+            services.AddScoped<CategoryService, CategoryService>();
             services.Configure<MvcOptions>(options =>
             {
                 options.Filters.Add(new CorsAuthorizationFilterFactory("TotalAllow"));

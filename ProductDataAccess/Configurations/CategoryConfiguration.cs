@@ -11,6 +11,7 @@ namespace ProductDataAccess.Configurations
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
+            builder.HasKey(p => new { p.Id });
             builder.Property(c => c.Name).IsRequired().HasMaxLength(255);
         }
     }

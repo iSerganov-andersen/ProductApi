@@ -7,11 +7,11 @@ namespace ProductCore.Entities
     public class Product : BaseEntity
     {
         private Product() { }
-        public Product(string name, Category category, Decimal price, Guid? id = null)
+        public Product(string name, Category category, Decimal price, Guid? id = null, bool isActive = true)
         {
             Id = id.HasValue ? id.Value :  Guid.NewGuid();
             Name = name;
-            IsActive = true;
+            IsActive = isActive;
             Category = category;
             Price = price;
         }

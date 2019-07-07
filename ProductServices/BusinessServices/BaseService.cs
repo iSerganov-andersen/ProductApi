@@ -66,7 +66,7 @@ namespace ProductServices.BusinessServices
             T exist = _context.Set<T>().AsNoTracking().FirstOrDefault(p => p.Id == id);
             if (exist != null)
             {
-                _context.Entry<T>(entity).State = EntityState.Modified;
+                _context.Set<T>().Update(entity);
                 await _context.SaveChangesAsync();
             }
             return exist;
